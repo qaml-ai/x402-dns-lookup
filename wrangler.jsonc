@@ -1,0 +1,17 @@
+{
+  "name": "x402-dns-lookup",
+  "compatibility_date": "2026-01-28",
+  "compatibility_flags": [
+    "nodejs_compat"
+  ],
+  "main": "src/index.ts",
+  "vars": {
+    "SERVER_ADDRESS": "0x34D3eD2c5Fc6D6A0F25d1Aad77193a8AA88A52b5"
+  },
+  "routes": [
+    {
+      "pattern": "dns.camelai.io",
+      "custom_domain": true
+    }
+  ]
+}
