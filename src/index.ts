@@ -225,10 +225,8 @@ app.post("/", async (c) => {
 app.get("/.well-known/openapi.json", openapiFromMiddleware("x402 DNS Lookup", "dns.camelai.io", ROUTES));
 
 app.get("/", (c) => {
-  return c.json({
-    service: "x402-dns-lookup",
-    description: "Look up DNS records and WHOIS registration info for domains. Send POST / with {\"input\": \"DNS records for example.com\"}",
-    price: "$0.005 per request (Base mainnet)",
+  return new Response('# dns.camelai.io \\u2014 DNS Lookup\n\nDNS records and WHOIS data.\n\nPart of [camelai.io](https://camelai.io).\n\n## API\n\n\\`POST /\\` \\u2014 $0.001 per request\n\n**Body:** `{"input": "DNS records for example.com"}`\n\n**Response:** JSON with DNS records or WHOIS info\n\n## Payment\n\nAccepts USDC on Base, Polygon, or Solana via x402. Or use a Stripe API key (\\`Authorization: Bearer sk_camel_...\\`).\n\nSee [camelai.io](https://camelai.io) for payment setup and full service list.', {
+    headers: { "Content-Type": "text/markdown; charset=utf-8" },
   });
 });
 
